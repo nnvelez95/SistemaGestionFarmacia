@@ -8,8 +8,8 @@ public class DatabaseInitializer {
 
     public static void createTables() {
         String createProductosTable = """
-            CREATE TABLE IF NOT EXISTS productos (
-                idproducto VARCHAR(20) PRIMARY KEY,
+                CREATE TABLE IF NOT EXISTS productos (
+                idproducto VARCHAR(50) PRIMARY KEY,  -- Más largo para UUID
                 troquel VARCHAR(20),
                 codebar VARCHAR(50) UNIQUE,
                 codebars VARCHAR(100),

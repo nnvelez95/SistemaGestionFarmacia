@@ -2,9 +2,10 @@ package com.farmacia.models;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class Producto {
-    private String idproducto;
+    private String idproducto;  // Ahora será autogenerado
     private String troquel;
     private String codebar;
     private String codebars;
@@ -23,9 +24,18 @@ public class Producto {
     private String droga;
 
     // Constructores
-    public Producto() {}
+    public Producto() {
+        // Generar ID único automáticamente
+        this.idproducto = "PROD_" + UUID.randomUUID().toString().substring(0, 8).toUpperCase();
+    }
+
+    // Constructor para cuando ya tenemos un ID (importación desde Excel)
+    public Producto(String idproducto) {
+        this.idproducto = idproducto;
+    }
 
     // Getters y setters
+
     public String getIdproducto() { return idproducto; }
     public void setIdproducto(String idproducto) { this.idproducto = idproducto; }
 
